@@ -29,6 +29,7 @@ namespace SysPecNSDesk
 
         private void novoToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+
             FrmUsuario frmUsuario = new();
             //Indica que o container pai é o container atual (FrmPrincipal)
             frmUsuario.MdiParent = this;
@@ -37,6 +38,28 @@ namespace SysPecNSDesk
             //frmUsuario.ShowDialog(); Impede que qualquer outra ação seja executada, a janela em questão fica em primeiro e único plano.
 
 
+        }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new();
+            frmCliente.MdiParent = this;
+            frmCliente.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            //informar mensagem de confirmação que o usuario quer sair do sistema, colocar botão de confirmação.
+            var msg = MessageBox.Show("Deseja Sair?", "Confirmação de saída", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (msg==DialogResult.Yes) 
+                //sair do sistema
+                Application.Exit();
+            
         }
     }
 }
