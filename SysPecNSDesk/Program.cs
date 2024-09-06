@@ -1,7 +1,13 @@
+using SysPecNSLib;
+
 namespace SysPecNSDesk
 {
     internal static class Program
     {
+        // criar propriedade estatica do tipo usuario
+        public static Usuario UsuarioLogado = null;
+        
+        
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -12,6 +18,7 @@ namespace SysPecNSDesk
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FrmPrincipal());
+            //Application.Run(New FrmLogin());
         }
     }
 }

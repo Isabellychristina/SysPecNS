@@ -1,4 +1,5 @@
-﻿using SysPecNSLib;
+﻿using MySqlX.XDevAPI;
+using SysPecNSLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,18 +40,55 @@ namespace SysPecNSDesk
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
-        {            
-                Endereco endereco = new(
+        {
+            Endereco endereco = new(
 
-                    txtNome.Text,
-                    txtCpf.Text,
-                    txtTelefone.Text,
-                    txtEmail.Text,
-                    dtpData_Nasc.Value,
-                    DateTime.Now,
-                    chkAtivo.Checked
-             );
+                
+                txtCep.Text,
+                txtLogradouro.Text,
+                txtNumero.Text,
+                txtComplemento.Text,
+                txtBairro.Text,
+                txtCidade.Text,
+                txtUF.Text,
+                cmbTipo_Endereco.Text
+                ) ; 
 
-            
+            endereco.Inserir();
+            if (endereco.Id > 0)
+            {
+                txtId.Text = endereco.Id.ToString();
+                MessageBox.Show($"O cliente {endereco.Logradouro}, " + $"foi inserido com sucesso, com Id {endereco.Id}. ");
+
+                txtId.Clear();
+                txtLogradouro.Clear();
+                txtCep.Clear();
+                txtNumero.Clear();
+                txtComplemento.Clear();
+                txtBairro.Clear();
+                txtCidade.Clear();
+                txtUF.Clear();
+
+                txtLogradouro.Focus();
+
+                FrmEndereco_Load(sender, e);
+            }
+
+            else
+
+            {
+                MessageBox.Show("Falha ao gravar o usuário.");
+            }
         }
+
+        private void FrmEndereco_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

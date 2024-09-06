@@ -56,10 +56,45 @@ namespace SysPecNSDesk
         {
             //informar mensagem de confirmação que o usuario quer sair do sistema, colocar botão de confirmação.
             var msg = MessageBox.Show("Deseja Sair?", "Confirmação de saída", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (msg==DialogResult.Yes) 
+            if (msg == DialogResult.Yes)
                 //sair do sistema
                 Application.Exit();
-            
+
+        }
+
+        private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmProduto frmProduto = new();
+            //Indica que o container pai é o container atual (FrmPrincipal)
+            frmProduto.MdiParent = this;
+            frmProduto.Show();
+        }
+
+
+        private void enderecosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEndereco frmEndereco = new();
+            //Indica que o container pai é o container atual (FrmPrincipal)
+            frmEndereco.MdiParent = this;
+            frmEndereco.Show();
+        }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFornecedor frmFornecedor = new();
+            //Indica que o container pai é o container atual (FrmPrincipal)
+            frmFornecedor.MdiParent = this;
+            frmFornecedor.Show();
+        }
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new();
+            //FrmLogin.MdiParent = this;
+            frmLogin.ShowDialog();
+            // 
+            Text += $" ({Program.UsuarioLogado.Email}) ";
+            // vai mostrar qual usuario que logou e qual o nome do nivel dele
+            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Nome} - {Program.UsuarioLogado.Nivel.Nome}";
         }
     }
 }

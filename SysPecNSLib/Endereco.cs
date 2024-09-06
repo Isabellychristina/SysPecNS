@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace SysPecNSLib
 {
-    internal class Endereco
+    public class Endereco
     {
         //Criar Cliente_id, Cep, Logradouro, numero, complemento, bairro, cidade, uf , tipo_endereco
         public int Id { get; set; }
-        public int Cliente_id { get; set; }
+        public Cliente Cliente { get; set; }
         public string? Cep {  get; set; }
         public string? Logradouro { get; set; }
         public string? Numero { get; set; }
@@ -23,27 +23,15 @@ namespace SysPecNSLib
         public string? Tipo_Endereco { get; set;}
         public bool Ativo { get; set; }
 
-        public Endereco() { }
-
-        public Endereco (int cliente_id, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco, bool ativo)
+        public Endereco() 
         {
-            
-            Cliente_id = cliente_id;
-            Cep = cep;
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemento = complemento;
-            Bairro = bairro;
-            Cidade = cidade;
-            Uf = uf;
-            Tipo_Endereco = tipo_Endereco;
-            Ativo = ativo;
+            Cliente = new();
         }
 
-        public Endereco (int id, int cliente_id, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco, bool ativo)
+        public Endereco( string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
         {
-            Id = id;
-            Cliente_id = cliente_id;
+
+            
             Cep = cep;
             Logradouro = logradouro;
             Numero = numero;
@@ -52,15 +40,44 @@ namespace SysPecNSLib
             Cidade = cidade;
             Uf = uf;
             Tipo_Endereco = tipo_Endereco;
-            Ativo = ativo;
+
+        }
+        public Endereco (Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
+        {
+            
+            Cliente = cliente;
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+            Tipo_Endereco = tipo_Endereco;
+          
+        }
+
+        public Endereco (int id, Cliente cliente, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
+        {
+            Id = id;
+            Cliente = cliente;
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+            Tipo_Endereco = tipo_Endereco;
+            
         }
 
         public void Inserir ()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_endereco_insert";
-            cmd.Parameters.AddWithValue("spcliente_id", Cliente_id);
+            cmd.Parameters.AddWithValue("spcliente_id", Cliente);
             cmd.Parameters.AddWithValue("spcep", Cep);
             cmd.Parameters.AddWithValue("splogradouro", Logradouro);
             cmd.Parameters.AddWithValue("spnumero", Numero);
@@ -69,7 +86,7 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcidade", Cidade);
             cmd.Parameters.AddWithValue("spuf", Uf);
             cmd.Parameters.AddWithValue("sptipo_endereco", Tipo_Endereco);
-            Id = Convert.ToInt32(cmd.ExecuteScalar()); 
+            
 
             var dr = cmd.ExecuteReader();
 
@@ -90,7 +107,7 @@ namespace SysPecNSLib
             {
                 Endereco = new(
                     dr.GetInt32(0),
-                    dr.GetInt32(1),
+                    Cliente.ObterPorId(dr.GetInt32(1)),
                     dr.GetString(2),
                     dr.GetString(3),
                     dr.GetString(4),
@@ -98,8 +115,7 @@ namespace SysPecNSLib
                     dr.GetString(6),
                     dr.GetString(7),
                     dr.GetString(8),
-                    dr.GetString(9),
-                    dr.GetBoolean(10)
+                    dr.GetString(9)                    
                     );
             }
             return Endereco;
@@ -127,18 +143,16 @@ namespace SysPecNSLib
             {
                 Lista.Add(
                     new(
-                        dr.GetInt32(0),
-                        dr.GetInt32(1),
-                        dr.GetString(2),
-                        dr.GetString(3),
-                        dr.GetString(4),
-                        dr.GetString(5),
-                        dr.GetString(6),
-                        dr.GetString(7),
-                        dr.GetString(8),
-                        dr.GetString(9),
-                        dr.GetBoolean(10)
-                        )
+                    dr.GetInt32(0),
+                    Cliente.ObterPorId(dr.GetInt32(1)),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetString(5),
+                    dr.GetString(6),
+                    dr.GetString(7),
+                    dr.GetString(8),
+                    dr.GetString(9))                 
                     );
 
             }
@@ -159,7 +173,7 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "sp_endereco_update";
-                cmd.Parameters.AddWithValue("spcliente_id", Cliente_id);
+                cmd.Parameters.AddWithValue("spcliente_id", Cliente);
                 cmd.Parameters.AddWithValue("spcep", Cep);
                 cmd.Parameters.AddWithValue("splogradouro", Logradouro);
                 cmd.Parameters.AddWithValue("spnumero", Numero);
@@ -195,5 +209,5 @@ namespace SysPecNSLib
 
 
     }
-    }
+    
 }

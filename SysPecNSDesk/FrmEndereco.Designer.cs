@@ -38,9 +38,9 @@
             lblCep = new Label();
             lblNumero = new Label();
             lblComplemento = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtBairro = new TextBox();
+            txtCidade = new TextBox();
+            txtUF = new TextBox();
             lblBairro = new Label();
             lblCidade = new Label();
             lblUf = new Label();
@@ -50,6 +50,8 @@
             btnExcluir = new Button();
             dgvEnderecos = new DataGridView();
             txtBusca = new TextBox();
+            cmbTipo_Endereco = new ComboBox();
+            lblTipo_Endereco = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEnderecos).BeginInit();
             SuspendLayout();
             // 
@@ -136,27 +138,27 @@
             lblComplemento.TabIndex = 9;
             lblComplemento.Text = "Complemento";
             // 
-            // textBox1
+            // txtBairro
             // 
-            textBox1.Location = new Point(324, 167);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(183, 23);
-            textBox1.TabIndex = 10;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtBairro.Location = new Point(324, 167);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(183, 23);
+            txtBairro.TabIndex = 10;
+            txtBairro.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // txtCidade
             // 
-            textBox2.Location = new Point(535, 167);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 23);
-            textBox2.TabIndex = 11;
+            txtCidade.Location = new Point(535, 167);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(150, 23);
+            txtCidade.TabIndex = 11;
             // 
-            // textBox3
+            // txtUF
             // 
-            textBox3.Location = new Point(713, 167);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(75, 23);
-            textBox3.TabIndex = 12;
+            txtUF.Location = new Point(713, 167);
+            txtUF.Name = "txtUF";
+            txtUF.Size = new Size(75, 23);
+            txtUF.TabIndex = 12;
             // 
             // lblBairro
             // 
@@ -188,7 +190,7 @@
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(369, 211);
+            chkAtivo.Location = new Point(369, 301);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 16;
@@ -197,7 +199,7 @@
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(80, 247);
+            btnInserir.Location = new Point(28, 337);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(75, 23);
             btnInserir.TabIndex = 17;
@@ -207,7 +209,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(369, 247);
+            btnEditar.Location = new Point(358, 337);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 18;
@@ -216,7 +218,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(627, 247);
+            btnExcluir.Location = new Point(691, 337);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(75, 23);
             btnExcluir.TabIndex = 19;
@@ -226,23 +228,43 @@
             // dgvEnderecos
             // 
             dgvEnderecos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEnderecos.Location = new Point(29, 305);
+            dgvEnderecos.Location = new Point(29, 423);
             dgvEnderecos.Name = "dgvEnderecos";
             dgvEnderecos.Size = new Size(737, 133);
             dgvEnderecos.TabIndex = 20;
             // 
             // txtBusca
             // 
-            txtBusca.Location = new Point(30, 276);
+            txtBusca.Location = new Point(28, 380);
             txtBusca.Name = "txtBusca";
             txtBusca.Size = new Size(738, 23);
             txtBusca.TabIndex = 21;
+            // 
+            // cmbTipo_Endereco
+            // 
+            cmbTipo_Endereco.FormattingEnabled = true;
+            cmbTipo_Endereco.Location = new Point(324, 215);
+            cmbTipo_Endereco.Name = "cmbTipo_Endereco";
+            cmbTipo_Endereco.Size = new Size(128, 23);
+            cmbTipo_Endereco.TabIndex = 22;
+            cmbTipo_Endereco.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // lblTipo_Endereco
+            // 
+            lblTipo_Endereco.AutoSize = true;
+            lblTipo_Endereco.Location = new Point(330, 197);
+            lblTipo_Endereco.Name = "lblTipo_Endereco";
+            lblTipo_Endereco.Size = new Size(82, 15);
+            lblTipo_Endereco.TabIndex = 23;
+            lblTipo_Endereco.Text = "Tipo Endereço";
             // 
             // FrmEndereco
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 579);
+            Controls.Add(lblTipo_Endereco);
+            Controls.Add(cmbTipo_Endereco);
             Controls.Add(txtBusca);
             Controls.Add(dgvEnderecos);
             Controls.Add(btnExcluir);
@@ -252,9 +274,9 @@
             Controls.Add(lblUf);
             Controls.Add(lblCidade);
             Controls.Add(lblBairro);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtUF);
+            Controls.Add(txtCidade);
+            Controls.Add(txtBairro);
             Controls.Add(lblComplemento);
             Controls.Add(lblNumero);
             Controls.Add(lblCep);
@@ -267,6 +289,7 @@
             Controls.Add(txtId);
             Name = "FrmEndereco";
             Text = "FrmEndereco";
+            Load += FrmEndereco_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEnderecos).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -284,9 +307,9 @@
         private Label lblCep;
         private Label lblNumero;
         private Label lblComplemento;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtBairro;
+        private TextBox txtCidade;
+        private TextBox txtUF;
         private Label lblBairro;
         private Label lblCidade;
         private Label lblUf;
@@ -296,5 +319,7 @@
         private Button btnExcluir;
         private DataGridView dgvEnderecos;
         private TextBox txtBusca;
+        private ComboBox cmbTipo_Endereco;
+        private Label lblTipo_Endereco;
     }
 }

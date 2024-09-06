@@ -38,13 +38,20 @@
             produtosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem1 = new ToolStripMenuItem();
             listarToolStripMenuItem = new ToolStripMenuItem();
+            fornecedorToolStripMenuItem = new ToolStripMenuItem();
             usuariosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem2 = new ToolStripMenuItem();
             listarToolStripMenuItem1 = new ToolStripMenuItem();
+            enderecosToolStripMenuItem = new ToolStripMenuItem();
+            novoToolStripMenuItem3 = new ToolStripMenuItem();
+            listarToolStripMenuItem2 = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
             toolStripMenuItem3 = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // mySqlDataAdapter1
@@ -65,7 +72,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem, produtosToolStripMenuItem, usuariosToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem, produtosToolStripMenuItem, usuariosToolStripMenuItem, enderecosToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "&Cadastros";
@@ -74,7 +81,7 @@
             // 
             clientesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, listaToolStripMenuItem });
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(122, 22);
+            clientesToolStripMenuItem.Size = new Size(128, 22);
             clientesToolStripMenuItem.Text = "&Clientes";
             // 
             // novoToolStripMenuItem
@@ -92,29 +99,38 @@
             // 
             // produtosToolStripMenuItem
             // 
-            produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem1, listarToolStripMenuItem });
+            produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem1, listarToolStripMenuItem, fornecedorToolStripMenuItem });
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(122, 22);
+            produtosToolStripMenuItem.Size = new Size(128, 22);
             produtosToolStripMenuItem.Text = "&Produtos";
             produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
             // 
             // novoToolStripMenuItem1
             // 
+            novoToolStripMenuItem1.BackgroundImageLayout = ImageLayout.Center;
             novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-            novoToolStripMenuItem1.Size = new Size(103, 22);
+            novoToolStripMenuItem1.Size = new Size(134, 22);
             novoToolStripMenuItem1.Text = "&Novo";
+            novoToolStripMenuItem1.Click += novoToolStripMenuItem1_Click;
             // 
             // listarToolStripMenuItem
             // 
             listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            listarToolStripMenuItem.Size = new Size(103, 22);
+            listarToolStripMenuItem.Size = new Size(134, 22);
             listarToolStripMenuItem.Text = "&Listar";
+            // 
+            // fornecedorToolStripMenuItem
+            // 
+            fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
+            fornecedorToolStripMenuItem.Size = new Size(134, 22);
+            fornecedorToolStripMenuItem.Text = "Fornecedor";
+            fornecedorToolStripMenuItem.Click += fornecedorToolStripMenuItem_Click;
             // 
             // usuariosToolStripMenuItem
             // 
             usuariosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem2, listarToolStripMenuItem1 });
             usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            usuariosToolStripMenuItem.Size = new Size(122, 22);
+            usuariosToolStripMenuItem.Size = new Size(128, 22);
             usuariosToolStripMenuItem.Text = "&Usuários";
             usuariosToolStripMenuItem.Click += usuariosToolStripMenuItem_Click;
             // 
@@ -130,6 +146,26 @@
             listarToolStripMenuItem1.Name = "listarToolStripMenuItem1";
             listarToolStripMenuItem1.Size = new Size(103, 22);
             listarToolStripMenuItem1.Text = "&Listar";
+            // 
+            // enderecosToolStripMenuItem
+            // 
+            enderecosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem3, listarToolStripMenuItem2 });
+            enderecosToolStripMenuItem.Name = "enderecosToolStripMenuItem";
+            enderecosToolStripMenuItem.Size = new Size(128, 22);
+            enderecosToolStripMenuItem.Text = "Enderecos";
+            enderecosToolStripMenuItem.Click += enderecosToolStripMenuItem_Click;
+            // 
+            // novoToolStripMenuItem3
+            // 
+            novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
+            novoToolStripMenuItem3.Size = new Size(103, 22);
+            novoToolStripMenuItem3.Text = "Novo";
+            // 
+            // listarToolStripMenuItem2
+            // 
+            listarToolStripMenuItem2.Name = "listarToolStripMenuItem2";
+            listarToolStripMenuItem2.Size = new Size(103, 22);
+            listarToolStripMenuItem2.Text = "Listar";
             // 
             // toolStripMenuItem1
             // 
@@ -151,23 +187,42 @@
             toolStripMenuItem3.Text = "&Sair";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 537);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(800, 22);
+            statusStrip1.TabIndex = 3;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(12, 17);
+            toolStripStatusLabel1.Text = "-";
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.pexels_almapapi_2276796;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 559);
             ControlBox = false;
+            Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";
-            Text = "FrmPrincipal";
+            Text = "Sistema de Controle de Loja - SysPec";
             WindowState = FormWindowState.Maximized;
+            Load += FrmPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -189,5 +244,11 @@
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem2;
         private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem enderecosToolStripMenuItem;
+        private ToolStripMenuItem novoToolStripMenuItem3;
+        private ToolStripMenuItem listarToolStripMenuItem2;
+        private ToolStripMenuItem fornecedorToolStripMenuItem;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

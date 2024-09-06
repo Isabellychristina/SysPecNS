@@ -63,6 +63,36 @@ namespace SysPecNSDesk.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _50d64e83069729910f6300009335a3ec {
+            get {
+                object obj = ResourceManager.GetObject("50d64e83069729910f6300009335a3ec", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _50d64e83069729910f6300009335a3ec1 {
+            get {
+                object obj = ResourceManager.GetObject("50d64e83069729910f6300009335a3ec1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7837_64x64 {
+            get {
+                object obj = ResourceManager.GetObject("7837_64x64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add {
             get {
                 object obj = ResourceManager.GetObject("Add", resourceCulture);
@@ -113,9 +143,59 @@ namespace SysPecNSDesk.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap monitor_256 {
+            get {
+                object obj = ResourceManager.GetObject("monitor-256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_almapapi_2276796 {
             get {
                 object obj = ResourceManager.GetObject("pexels-almapapi-2276796", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_lumierestudiomx_4116192 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-lumierestudiomx-4116192", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_pixabay_356056 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-pixabay-356056", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_rainbow_curves_abstract_colorful_background_image_2164067 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-rainbow-curves-abstract-colorful-background-image_2164067", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_rainbow_curves_abstract_colorful_background_image_21640671 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-rainbow-curves-abstract-colorful-background-image_21640671", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

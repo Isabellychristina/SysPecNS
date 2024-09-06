@@ -58,6 +58,7 @@ namespace SysPecNSDesk
                 MessageBox.Show("Falha ao gravar o usuário.");
             }
 
+            Endereco endereco = new();
         }
 
         private void CarregaGrid(string nome = "")
