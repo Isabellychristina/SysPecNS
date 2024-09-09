@@ -92,9 +92,22 @@ namespace SysPecNSDesk
             //FrmLogin.MdiParent = this;
             frmLogin.ShowDialog();
             // 
-            Text += $" ({Program.UsuarioLogado.Email}) ";
+            //Text += $" ({Program.UsuarioLogado.Email}) ";
             // vai mostrar qual usuario que logou e qual o nome do nivel dele
             toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Nome} - {Program.UsuarioLogado.Nivel.Nome}";
+        }
+
+        private void listaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void novoToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            FrmPedidoNovo frmPedidoNovo = new();
+            //Indica que o container pai é o container atual (FrmPrincipal)
+            frmPedidoNovo.MdiParent = this;
+            frmPedidoNovo.Show();
         }
     }
 }

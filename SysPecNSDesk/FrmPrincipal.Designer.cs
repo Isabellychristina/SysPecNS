@@ -46,6 +46,9 @@
             novoToolStripMenuItem3 = new ToolStripMenuItem();
             listarToolStripMenuItem2 = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripMenuItem();
+            pedidosToolStripMenuItem = new ToolStripMenuItem();
+            novoToolStripMenuItem4 = new ToolStripMenuItem();
+            listaToolStripMenuItem1 = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
             toolStripMenuItem3 = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
@@ -169,9 +172,31 @@
             // 
             // toolStripMenuItem1
             // 
+            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { pedidosToolStripMenuItem });
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(81, 20);
             toolStripMenuItem1.Text = "Movimento";
+            // 
+            // pedidosToolStripMenuItem
+            // 
+            pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem4, listaToolStripMenuItem1 });
+            pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            pedidosToolStripMenuItem.Size = new Size(180, 22);
+            pedidosToolStripMenuItem.Text = "Pedidos";
+            // 
+            // novoToolStripMenuItem4
+            // 
+            novoToolStripMenuItem4.Name = "novoToolStripMenuItem4";
+            novoToolStripMenuItem4.Size = new Size(180, 22);
+            novoToolStripMenuItem4.Text = "&Novo";
+            novoToolStripMenuItem4.Click += novoToolStripMenuItem4_Click;
+            // 
+            // listaToolStripMenuItem1
+            // 
+            listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
+            listaToolStripMenuItem1.Size = new Size(180, 22);
+            listaToolStripMenuItem1.Text = "&Lista";
+            listaToolStripMenuItem1.Click += listaToolStripMenuItem1_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -250,5 +275,8 @@
         private ToolStripMenuItem fornecedorToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripMenuItem pedidosToolStripMenuItem;
+        private ToolStripMenuItem novoToolStripMenuItem4;
+        private ToolStripMenuItem listaToolStripMenuItem1;
     }
 }
