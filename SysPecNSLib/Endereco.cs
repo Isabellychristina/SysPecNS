@@ -28,10 +28,10 @@ namespace SysPecNSLib
             Cliente = new();
         }
 
-        public Endereco( string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
+        public Endereco(int id, string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipo_Endereco)
         {
 
-            
+            Id = Id;
             Cep = cep;
             Logradouro = logradouro;
             Numero = numero;
@@ -77,7 +77,7 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_endereco_insert";
-            cmd.Parameters.AddWithValue("spcliente_id", Cliente);
+            cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
             cmd.Parameters.AddWithValue("spcep", Cep);
             cmd.Parameters.AddWithValue("splogradouro", Logradouro);
             cmd.Parameters.AddWithValue("spnumero", Numero);
@@ -121,27 +121,53 @@ namespace SysPecNSLib
             return Endereco;
         }
 
-        public static List<Endereco> ObterLista(string nome = "")
+        public static List<Endereco> ObterListaPorCliente(int clienteId)
         {
-            List<Endereco> Lista = new();
+            List<Endereco> enderecos = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from enderecos where cliente_id = {clienteId}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                enderecos.Add(
+                    new(
+                        dr.GetInt32(0),
+                        Cliente.ObterPorId(dr.GetInt32(1)),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetString(4),
+                        dr.GetString(5),
+                        dr.GetString(6),
+                        dr.GetString(7),
+                        dr.GetString(8),
+                        dr.GetString(9)
+                        )
+                    );
+            }
+            return enderecos;
+        }
+        public static List<Endereco> ObterLista(string? endereco= "")
+        {
+            List<Endereco> enderecos = new();
             var comandosSQL = Banco.Abrir();
             comandosSQL.CommandType = System.Data.CommandType.Text;
 
-            comandosSQL.CommandText = "select * from clientes order by nome";
-            if (nome == "")
+            comandosSQL.CommandText = "select * from enderecos order by nome";
+            if (endereco == "")
             {
                 comandosSQL.CommandText = "select * from endereco order by nome";
             }
             else
             {
-                comandosSQL.CommandText = $"select * from clientes where nome like '%{nome}%' order by nome";
+                comandosSQL.CommandText = $"select * from enderecos where nome like '%{enderecos}%' order by nome";
 
             }
 
             var dr = comandosSQL.ExecuteReader();
             while (dr.Read())
             {
-                Lista.Add(
+                enderecos.Add(
                     new(
                     dr.GetInt32(0),
                     Cliente.ObterPorId(dr.GetInt32(1)),
@@ -156,7 +182,7 @@ namespace SysPecNSLib
                     );
 
             }
-            return Lista;
+            return enderecos;
         }
 
         public static void Arquivar(int id)
@@ -173,7 +199,7 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "sp_endereco_update";
-                cmd.Parameters.AddWithValue("spcliente_id", Cliente);
+                cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
                 cmd.Parameters.AddWithValue("spcep", Cep);
                 cmd.Parameters.AddWithValue("splogradouro", Logradouro);
                 cmd.Parameters.AddWithValue("spnumero", Numero);

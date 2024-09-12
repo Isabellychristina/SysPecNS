@@ -43,16 +43,16 @@ namespace SysPecNSDesk
         {
             Endereco endereco = new(
 
-                
-                txtCep.Text,
+                txtId.Text
                 txtLogradouro.Text,
+                txtCep.Text,
                 txtNumero.Text,
                 txtComplemento.Text,
                 txtBairro.Text,
                 txtCidade.Text,
                 txtUF.Text,
                 cmbTipo_Endereco.Text
-                ) ; 
+                ); 
 
             endereco.Inserir();
             if (endereco.Id > 0)

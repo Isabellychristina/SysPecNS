@@ -52,15 +52,14 @@ namespace SysPecNSLib
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_itempedido_insert";
             cmd.Parameters.AddWithValue("sppedido_id",IdPedido);
-            cmd.Parameters.AddWithValue("spproduto_id", Produto);
+            cmd.Parameters.AddWithValue("spproduto_id",Produto.Id);
             cmd.Parameters.AddWithValue("spquantidade", Quantidade);
             cmd.Parameters.AddWithValue("spdesconto", Desconto);
+         
+
             cmd.ExecuteNonQuery();
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
 
-
-            //
-            //values (0, sppedido_id, spproduto_id, (select valor_unit from produtos where id = spproduto_id), spquantidade, spdesconto);
+            //Id = Convert.ToInt32(cmd.ExecuteScalar());
 
         }
          
