@@ -43,7 +43,7 @@ namespace SysPecNSDesk
         {
             Endereco endereco = new(
 
-                txtId.Text
+                Cliente.ObterPorId(Convert.ToInt32(txtId.Text)), 
                 txtLogradouro.Text,
                 txtCep.Text,
                 txtNumero.Text,
