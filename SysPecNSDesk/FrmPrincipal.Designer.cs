@@ -53,6 +53,7 @@
             toolStripMenuItem3 = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            estoqueToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -181,25 +182,26 @@
             // 
             pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem4, listaToolStripMenuItem1 });
             pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            pedidosToolStripMenuItem.Size = new Size(180, 22);
+            pedidosToolStripMenuItem.Size = new Size(116, 22);
             pedidosToolStripMenuItem.Text = "Pedidos";
             // 
             // novoToolStripMenuItem4
             // 
             novoToolStripMenuItem4.Name = "novoToolStripMenuItem4";
-            novoToolStripMenuItem4.Size = new Size(180, 22);
+            novoToolStripMenuItem4.Size = new Size(103, 22);
             novoToolStripMenuItem4.Text = "&Novo";
             novoToolStripMenuItem4.Click += novoToolStripMenuItem4_Click;
             // 
             // listaToolStripMenuItem1
             // 
             listaToolStripMenuItem1.Name = "listaToolStripMenuItem1";
-            listaToolStripMenuItem1.Size = new Size(180, 22);
+            listaToolStripMenuItem1.Size = new Size(103, 22);
             listaToolStripMenuItem1.Text = "&Lista";
             listaToolStripMenuItem1.Click += listaToolStripMenuItem1_Click;
             // 
             // toolStripMenuItem2
             // 
+            toolStripMenuItem2.DropDownItems.AddRange(new ToolStripItem[] { estoqueToolStripMenuItem });
             toolStripMenuItem2.Name = "toolStripMenuItem2";
             toolStripMenuItem2.Size = new Size(70, 20);
             toolStripMenuItem2.Text = "Operação";
@@ -226,6 +228,13 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(12, 17);
             toolStripStatusLabel1.Text = "-";
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            estoqueToolStripMenuItem.Size = new Size(180, 22);
+            estoqueToolStripMenuItem.Text = "Estoque";
+            estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
             // FrmPrincipal
             // 
@@ -278,5 +287,6 @@
         private ToolStripMenuItem pedidosToolStripMenuItem;
         private ToolStripMenuItem novoToolStripMenuItem4;
         private ToolStripMenuItem listaToolStripMenuItem1;
+        private ToolStripMenuItem estoqueToolStripMenuItem;
     }
 }

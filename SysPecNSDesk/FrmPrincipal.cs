@@ -109,5 +109,13 @@ namespace SysPecNSDesk
             frmPedidoNovo.MdiParent = this;
             frmPedidoNovo.Show();
         }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstoque frmEstoque = new();
+            //Indica que o container pai é o container atual (FrmPrincipal)
+            frmEstoque.MdiParent = this;
+            frmEstoque.Show();
+        }
     }
 }
