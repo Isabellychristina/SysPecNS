@@ -23,7 +23,7 @@ namespace SysPecNSDesk
 
         }
 
-        private void dgvestoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CarregaGrid()
         {
 
             var Lista = Estoque.ObterLista();
@@ -36,14 +36,13 @@ namespace SysPecNSDesk
                 dgvEstoque.Rows[count].Cells[1].Value = estoque.Produto_id;
                 dgvEstoque.Rows[count].Cells[2].Value = estoque.Quantidade;
                 dgvEstoque.Rows[count].Cells[3].Value = estoque.Data_ultimo_movimento;
-                
+
                 count++;
             }
 
-        
+
         }
 
-      
     }
 
 

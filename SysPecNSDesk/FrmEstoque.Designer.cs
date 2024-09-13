@@ -35,22 +35,21 @@
             clnProdutoid = new DataGridViewTextBoxColumn();
             clnQuantidade = new DataGridViewTextBoxColumn();
             clndata_ultimo_movimento = new DataGridViewTextBoxColumn();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
             btnConsultar = new Button();
+            groupBox1 = new GroupBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            label3 = new Label();
+            btnAdicionar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 50);
+            label1.Location = new Point(45, 37);
             label1.Name = "label1";
             label1.Size = new Size(80, 15);
             label1.TabIndex = 3;
@@ -59,9 +58,9 @@
             // txtProdudoId
             // 
             txtProdudoId.Enabled = false;
-            txtProdudoId.Location = new Point(139, 50);
+            txtProdudoId.Location = new Point(11, 65);
             txtProdudoId.Name = "txtProdudoId";
-            txtProdudoId.Size = new Size(183, 23);
+            txtProdudoId.Size = new Size(142, 23);
             txtProdudoId.TabIndex = 0;
             txtProdudoId.TextChanged += txtProdudoId_TextChanged;
             // 
@@ -71,10 +70,10 @@
             dgvEstoque.AllowUserToDeleteRows = false;
             dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEstoque.Columns.AddRange(new DataGridViewColumn[] { clnId, clnProdutoid, clnQuantidade, clndata_ultimo_movimento });
-            dgvEstoque.Location = new Point(31, 202);
+            dgvEstoque.Location = new Point(8, 238);
             dgvEstoque.Name = "dgvEstoque";
             dgvEstoque.ReadOnly = true;
-            dgvEstoque.Size = new Size(573, 214);
+            dgvEstoque.Size = new Size(574, 202);
             dgvEstoque.TabIndex = 4;
             // 
             // clnId
@@ -108,100 +107,84 @@
             clndata_ultimo_movimento.ReadOnly = true;
             clndata_ultimo_movimento.Width = 200;
             // 
+            // btnConsultar
+            // 
+            btnConsultar.Location = new Point(45, 104);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(75, 37);
+            btnConsultar.TabIndex = 13;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(dgvEstoque);
+            groupBox1.Location = new Point(175, 37);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(588, 461);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Controle de Estoque";
+            // 
             // textBox1
             // 
-            textBox1.Location = new Point(650, 98);
+            textBox1.Location = new Point(12, 196);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(650, 150);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(650, 202);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(650, 259);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 8;
+            textBox1.Size = new Size(141, 23);
+            textBox1.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(681, 80);
+            label2.Location = new Point(51, 169);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 9;
-            label2.Text = "label2";
+            label2.Size = new Size(69, 15);
+            label2.TabIndex = 15;
+            label2.Text = "Quantidade";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(12, 325);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(141, 23);
+            dateTimePicker1.TabIndex = 16;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(681, 124);
+            label3.Location = new Point(66, 298);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 10;
-            label3.Text = "label3";
+            label3.Size = new Size(31, 15);
+            label3.TabIndex = 17;
+            label3.Text = "Data";
             // 
-            // label4
+            // btnAdicionar
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(681, 176);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 11;
-            label4.Text = "label4";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(681, 238);
-            label5.Name = "label5";
-            label5.Size = new Size(38, 15);
-            label5.TabIndex = 12;
-            label5.Text = "label5";
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Location = new Point(36, 97);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(75, 23);
-            btnConsultar.TabIndex = 13;
-            btnConsultar.Text = "button1";
-            btnConsultar.UseVisualStyleBackColor = true;
-           
+            btnAdicionar.Location = new Point(45, 235);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(75, 38);
+            btnAdicionar.TabIndex = 18;
+            btnAdicionar.Text = "Adicionar";
+            btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // FrmEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 553);
-            Controls.Add(btnConsultar);
-            Controls.Add(label5);
-            Controls.Add(label4);
+            ClientSize = new Size(839, 553);
+            Controls.Add(btnAdicionar);
             Controls.Add(label3);
+            Controls.Add(btnConsultar);
+            Controls.Add(dateTimePicker1);
             Controls.Add(label2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Controls.Add(dgvEstoque);
-            Controls.Add(txtProdudoId);
+            Controls.Add(groupBox1);
             Controls.Add(label1);
+            Controls.Add(txtProdudoId);
             Name = "FrmEstoque";
             Text = "FrmEstoque";
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,14 +198,12 @@
         private DataGridViewTextBoxColumn clnProdutoid;
         private DataGridViewTextBoxColumn clnQuantidade;
         private DataGridViewTextBoxColumn clndata_ultimo_movimento;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
         private Button btnConsultar;
+        private GroupBox groupBox1;
+        private TextBox textBox1;
+        private Label label2;
+        private DateTimePicker dateTimePicker1;
+        private Label label3;
+        private Button btnAdicionar;
     }
 }

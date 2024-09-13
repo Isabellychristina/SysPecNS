@@ -37,7 +37,7 @@ namespace SysPecNSLib
             Data_ultimo_movimento = data_ultimo_movimento;
         }
 
-
+     
         public void Inserir()
         {
             var cmd = Banco.Abrir();
