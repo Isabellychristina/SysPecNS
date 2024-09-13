@@ -81,6 +81,26 @@ namespace SysPecNSDesk
             }
         }
 
+        private void CarregaGrid(string nome = "")
+        {
+            var lista = Endereco.ObterLista(nome);
+            dgvEnderecos.Rows.Clear();
+            int cont = 0;
+            foreach (var endereco in lista)
+            {
+                dgvEnderecos.Rows.Add();
+                dgvEnderecos.Rows[cont].Cells[0].Value = endereco.Cliente.Id;
+                dgvEnderecos.Rows[cont].Cells[1].Value = endereco.Cep;
+                dgvEnderecos.Rows[cont].Cells[2].Value = endereco.Logradouro;
+                dgvEnderecos.Rows[cont].Cells[3].Value = endereco.Numero;
+                dgvEnderecos.Rows[cont].Cells[4].Value = endereco.Complemento;
+                dgvEnderecos.Rows[cont].Cells[5].Value = endereco.Bairro;
+                dgvEnderecos.Rows[cont].Cells[6].Value = endereco.Cidade;
+                dgvEnderecos.Rows[cont].Cells[6].Value = endereco.Uf;
+                cont++;
+
+            }
+        }
         private void FrmEndereco_Load(object sender, EventArgs e)
         {
 
